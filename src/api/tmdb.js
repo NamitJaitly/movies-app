@@ -1,13 +1,13 @@
-
 import axios from 'axios';
+import Constants from 'expo-constants';
 
-export const API_KEY = 'd77d42fbd053144c6422801de0a76e66';
-export const BASE_URL = 'https://api.themoviedb.org/3';
+const TMDB_API_KEY = Constants.expoConfig.extra.TMDB_API_KEY;
 
 const tmdb = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'https://api.themoviedb.org/3',
   params: {
-    api_key: API_KEY,
+    api_key: TMDB_API_KEY,
+    language: 'en-US',
   },
 });
 
